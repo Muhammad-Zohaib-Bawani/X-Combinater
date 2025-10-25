@@ -82,7 +82,7 @@
     if (document.querySelector("#has_smooth").classList.contains("has-smooth")) {
       const smoother = ScrollSmoother.create({
         // smooth: 0.9,
-        smooth: 1.5,
+        smooth: 2.5,
         effects: device_width < 1025 ? false : true,
         smoothTouch: 0.1,
         // normalizeScroll: false,
@@ -825,6 +825,21 @@
         scale: 1.3,
         delay: -1.5,
         ease: Power2.out
+      });
+    });
+  }
+
+  // Anchor links
+  let smoother = ScrollSmoother.get();
+  if (smoother) {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          smoother.scrollTo(targetElement, true, "top top");
+        }
       });
     });
   }
