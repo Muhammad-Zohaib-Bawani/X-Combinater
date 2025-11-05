@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="X Combinator Website" />
+
+    <title>X Combinator - IT Service & Solution Provider</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo.png" />
+    <!-- Dependencies CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="assets/css/fontawesome-pro.css"> -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/progressbar.css" />
+    <link rel="stylesheet" href="assets/css/meanmenu.min.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/odometer-theme-default.css" />
+    <link rel="stylesheet" href="assets/css/nice-select.css" />
+
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body class="body-wrapper">
+    <div class="loader-wrap">
+      <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+        <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+      </svg>
+
+      <div class="loader-wrap-heading">
+        <div class="load-text">
+          <span>X</span>
+          <span>C</span>
+          <span>o</span>
+          <span>m</span>
+          <span>b</span>
+          <span>i</span>
+          <span>n</span>
+          <span>a</span>
+          <span>t</span>
+          <span>e</span>
+          <span>r</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sroll to top -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+    </div>
+
+    <!-- side toggle start -->
+    <aside class="fix">
+      <div class="side-info">
+        <div class="side-info-content">
+          <div class="offset-widget offset-header">
+            <div class="offset-logo">
+              <a href="index.html">
+                <img
+                  src="assets/imgs/logo.png"
+                  alt="site logo"
+                  class="normal-logo"
+                />
+              </a>
+            </div>
+            <button id="side-info-close" class="side-info-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="mobile-menu fix"></div>
+          <div class="offset-button">
+            <a href="#contact" class="rr-btn">
+              <span class="btn-wrap">
+                <span class="text-one">Let's Talk</span>
+                <span class="text-two">Let's Talk</span>
+              </span>
+            </a>
+          </div>
+          <div class="offset-widget-box">
+            <h2 class="title">Contact US</h2>
+            <div class="contact-meta">
+              <div class="contact-item">
+                <span class="icon"
+                  ><i class="fa-solid fa-location-dot"></i
+                ></span>
+                <span class="text">United States</span>
+              </div>
+              <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+                <span class="text"
+                  ><a href="mailto:Service@xcombinater.com"
+                    >Service@xcombinater.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-item">
+                <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                <span class="text"
+                  ><a href="tel:+2108023183">+2108023183</a></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="offcanvas-overlay"></div>
+    <!-- side toggle end -->
+
+    <div class="has-smooth" id="has_smooth"></div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <!-- Header area start -->
+        <header class="header-area">
+          <!-- <div class="header-top">
+            <div class="container rr-container-1350">
+              <div class="header-top-inner">
+                <div class="header-note">
+                  <span class="title">Update:</span>
+                  <p class="text">
+                    Sign Up and Receive upto 20% bonus discount on checkout
+                  </p>
+                </div>
+                <div class="header-social">
+                  <a href="https://www.facebook.com/"
+                    ><i class="fa-brands fa-facebook-f"></i>Facebook</a
+                  >
+                  <a href="https://x.com/?lang=en"
+                    ><i class="fa-brands fa-twitter"></i>Twitter</a
+                  >
+                  <a href="https://www.linkedin.com/"
+                    ><i class="fa-brands fa-linkedin-in"></i>Linkedin</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="header-main rr-bg-gray">
+            <div class="container rr-container-1350">
+              <div class="header-main-inner">
+                <div class="header-main-bg">
+                  <img src="assets/imgs/shape/shape-1.webp" alt="image" />
+                </div>
+                <div class="header-logo">
+                  <a href="index.html">
+                    <img
+                      src="assets/imgs/logo.png"
+                      alt="site logo"
+                      class="normal-logo"
+                    />
+                  </a>
+                </div>
+                <div class="header-nav">
+                  <nav class="main-menu">
+                    <ul>
+                      <li><a href="#hero">Home</a></li>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+                      <li><a href="pricing.html">Pricing</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="header-cta">
+                  <span class="call-box"
+                    >Call us: <a href="tel:+2108023183">+2108023183</a>
+                  </span>
+                </div>
+                <div class="header-offfcanvas">
+                  <button class="side-toggle rr-bg-white">
+                    <i class="fa-solid fa-bars"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <!-- Header area end -->
+
+        <main>
+          <!-- breadcrumb area start -->
+          <section class="breadcrumb-area">
+            <div class="container">
+              <div class="rr-breadcrumb-wrapper">
+                <div class="row">
+                  <div
+                    class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"
+                  >
+                    <div class="rr-breadcrumb-path">
+                      <h2 class="breadcrumb-title">Terms & Condition</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- breadcrumb area end -->
+          <div class="container my-5">
+            <div
+              class="p-5"
+              style="background-color: #f8f9fa; border-radius: 15px"
+            >
+              <h2
+                class="text-center mb-5"
+                style="
+                  font-weight: 700;
+                  font-size: 3rem;
+                  color: #333;
+                  text-transform: uppercase;
+                "
+              >
+                Terms and Conditions
+              </h2>
+              <p
+                class="lead text-center mb-5"
+                style="font-size: 1.25rem; color: #555"
+              >
+                Welcome to Xcombinater. These terms and conditions outline the
+                rules and regulations for the use of our website and services.
+              </p>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="0.3s"
+                style="visibility: visible; animation-delay: 0.3s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  1. Introduction
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  By accessing this website, we assume you accept these terms
+                  and conditions. Do not continue to use Xcombinater if you do
+                  not agree to take all of the terms and conditions stated on
+                  this page.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="0.5s"
+                style="visibility: visible; animation-delay: 0.5s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  2. Intellectual Property Rights
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  Other than the content you own, under these terms, Xcombinater
+                  and/or its licensors own all the intellectual property rights
+                  and materials contained in this website. You are granted a
+                  limited license only for purposes of viewing the material
+                  contained on this website.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="0.7s"
+                style="visibility: visible; animation-delay: 0.7s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  3. Restrictions
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  You are specifically restricted from all of the following:
+                </p>
+                <ul
+                  style="
+                    font-size: 1.1rem;
+                    line-height: 1.8;
+                    color: #555;
+                    padding-left: 20px;
+                  "
+                >
+                  <li>Publishing any website material in any other media.</li>
+                  <li>
+                    Selling, sublicensing, and/or otherwise commercializing any
+                    website material.
+                  </li>
+                  <li>
+                    Publicly performing and/or showing any website material.
+                  </li>
+                  <li>
+                    Using this website in any way that is or may be damaging to
+                    this website.
+                  </li>
+                  <li>
+                    Using this website in any way that impacts user access to
+                    this website.
+                  </li>
+                  <li>
+                    Using this website contrary to applicable laws and
+                    regulations, or in any way may cause harm to the website, or
+                    to any person or business entity.
+                  </li>
+                  <li>
+                    Engaging in any data mining, data harvesting, data
+                    extracting, or any other similar activity in relation to
+                    this website.
+                  </li>
+                  <li>
+                    Using this website to engage in any advertising or
+                    marketing.
+                  </li>
+                </ul>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="0.9s"
+                style="visibility: visible; animation-delay: 0.9s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  4. Your Content
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  In these terms and conditions, “Your Content” shall mean any
+                  audio, video, text, images, or other material you choose to
+                  display on this website. By displaying Your Content, you grant
+                  Xcombinater a non-exclusive, worldwide, irrevocable,
+                  sub-licensable license to use, reproduce, adapt, publish,
+                  translate, and distribute it in any and all media.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="1.1s"
+                style="visibility: visible; animation-delay: 1.1s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  5. No warranties
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  This website is provided “as is,” with all faults, and
+                  Xcombinater expresses no representations or warranties, of any
+                  kind related to this website or the materials contained on
+                  this website. Also, nothing contained on this website shall be
+                  interpreted as advising you.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="1.3s"
+                style="visibility: visible; animation-delay: 1.3s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  6. Limitation of liability
+                </h3>
+                <p style-="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  In no event shall Xcombinater, nor any of its officers,
+                  directors, and employees, be held liable for anything arising
+                  out of or in any way connected with your use of this website
+                  whether such liability is under contract. Xcombinater,
+                  including its officers, directors, and employees shall not be
+                  held liable for any indirect, consequential, or special
+                  liability arising out of or in any way related to your use of
+                  this website.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="1.5s"
+                style="visibility: visible; animation-delay: 1.5s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  7. Indemnification
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  You hereby indemnify to the fullest extent Xcombinater from
+                  and against any and/or all liabilities, costs, demands, causes
+                  of action, damages, and expenses arising in any way related to
+                  your breach of any of the provisions of these terms.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="1.7s"
+                style="visibility: visible; animation-delay: 1.7s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  8. Severability
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  If any provision of these terms is found to be invalid under
+                  any applicable law, such provisions shall be deleted without
+                  affecting the remaining provisions herein.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="1.9s"
+                style="visibility: visible; animation-delay: 1.9s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  9. Variation of Terms
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  Xcombinater is permitted to revise these terms at any time as
+                  it sees fit, and by using this website you are expected to
+                  review these terms on a regular basis.
+                </p>
+              </div>
+
+              <div
+                class="my-5 wow fadeInUp"
+                data-wow-delay="2.1s"
+                style="visibility: visible; animation-delay: 2.1s"
+              >
+                <h3
+                  style="
+                    font-weight: 600;
+                    font-size: 2rem;
+                    color: #333;
+                    border-bottom: 2px solid #007bff;
+                    padding-bottom: 10px;
+                  "
+                >
+                  10. Governing Law & Jurisdiction
+                </h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: #555">
+                  These terms will be governed by and interpreted in accordance
+                  with the laws of the State of [Your State], and you submit to
+                  the non-exclusive jurisdiction of the state and federal courts
+                  located in [Your City] for the resolution of any disputes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- footer area start  -->
+        <footer class="footer-area">
+          <div class="footer-widget-wrapper-box">
+            <div class="container rr-container-1410">
+              <div class="footer-widget-wrapper">
+                <div class="footer-widget-box">
+                  <div class="footer-logo">
+                    <a href="index.html">
+                      <img
+                        src="assets/imgs/logo.png"
+                        alt="site logo"
+                        class="normal-logo"
+                      />
+                    </a>
+                  </div>
+                  <div class="footer-text">
+                    <p class="text">
+                      we are passionate about empowering businesses through
+                      innovative and reliable technology solutions.
+                    </p>
+                  </div>
+                  <div class="footer-social">
+                    <a href="https://www.facebook.com/"
+                      ><i class="fa-brands fa-facebook-f"></i
+                    ></a>
+                    <a href="https://x.com/?lang=en"
+                      ><i class="fa-brands fa-twitter"></i
+                    ></a>
+                    <a href="https://www.instagram.com/"
+                      ><i class="fa-brands fa-instagram"></i
+                    ></a>
+                    <a href="https://www.linkedin.com/"
+                      ><i class="fa-brands fa-linkedin-in"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="footer-widget-box">
+                  <h2 class="footer-widget-title">Address Company</h2>
+                  <ul class="footer-meta-list">
+                    <li>
+                      <span class="icon"
+                        ><i class="fa-solid fa-location-dot"></i></span
+                      ><span class="text"> United States</span>
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa-solid fa-phone"></i></span
+                      ><span class="text">
+                        Call Us :
+                        <a href="tel:+2108023183">+2108023183</a></span
+                      >
+                    </li>
+                    <li>
+                      <span class="icon"
+                        ><i class="fa-solid fa-envelope"></i></span
+                      ><span class="text">
+                        Mail:
+                        <a href="mailto:Service@xcombinater.com"
+                          >Service@xcombinater.com</a
+                        ></span
+                      >
+                    </li>
+                    <li>
+                      <span class="icon"><i class="fa-solid fa-clock"></i></span
+                      ><span class="text"> Office : 8:00 AM - 7:00 PM</span>
+                    </li>
+                  </ul>
+                </div>
+                <!-- <div class="footer-widget-box">
+                  <h2 class="footer-widget-title">Our Services</h2>
+                  <ul class="footer-nav-list">
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-chevron-right"></i>Database
+                        Solution</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-chevron-right"></i>Data
+                        Protection</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-chevron-right"></i>App
+                        Development</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-chevron-right"></i>Machine
+                        Learning</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#"
+                        ><i class="fa-solid fa-chevron-right"></i>Helpdesk
+                        Services</a
+                      >
+                    </li>
+                  </ul>
+                </div> -->
+                <!-- <div class="footer-widget-box">
+                  <h2 class="footer-widget-title">Latest Posts</h2>
+                  <div class="footer-blog-wrapper-box">
+                    <div class="footer-blog-wrapper">
+                      <article class="footer-blog">
+                        <div class="thumb">
+                          <a href="blog-details.html"
+                            ><img
+                              src="assets/imgs/blog/blog-9.webp"
+                              alt="blog image"
+                          /></a>
+                        </div>
+                        <div class="content">
+                          <div class="meta">
+                            <span class="date"
+                              ><i class="fa-regular fa-clock"></i>15th Dec,
+                              2025</span
+                            >
+                          </div>
+                          <h2 class="title">
+                            <a href="blog-details.html"
+                              >Why Your Business Needs</a
+                            >
+                          </h2>
+                          <a href="blog-details.html" class="blog-btn"
+                            >Read More <i class="fa-solid fa-arrow-right"></i
+                          ></a>
+                        </div>
+                      </article>
+                      <article class="footer-blog">
+                        <div class="thumb">
+                          <a href="blog-details.html"
+                            ><img
+                              src="assets/imgs/blog/blog-10.webp"
+                              alt="blog image"
+                          /></a>
+                        </div>
+                        <div class="content">
+                          <div class="meta">
+                            <span class="date"
+                              ><i class="fa-regular fa-clock"></i>15th Dec,
+                              2025</span
+                            >
+                          </div>
+                          <h2 class="title">
+                            <a href="blog-details.html"
+                              >Small Business Essentials</a
+                            >
+                          </h2>
+                          <a href="blog-details.html" class="blog-btn"
+                            >Read More <i class="fa-solid fa-arrow-right"></i
+                          ></a>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <div class="copyright-area">
+            <div class="container rr-container-1410">
+              <div class="copyright-area-inner">
+                <div class="copyright-text">
+                  <p class="text">
+                    Copyright @ 2025 <a href="#">X Combinator</a>. All Rights
+                    Received.
+                  </p>
+                </div>
+                <div class="copyright-link">
+                  <a href="privacy-policy.html">Privacy policy</a>
+                  <a href="terms-and-condition.html">Terms of use</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer area end  -->
+      </div>
+    </div>
+
+    <!-- Dependencies JS Files -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/progressbar.js"></script>
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/TextPlugin.js"></script>
+    <script src="assets/js/customEase.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/backToTop.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom.js"></script>
+    <script src="js/main.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script src="assets/js/contact-form.js"></script>
+  </body>
+</html>
