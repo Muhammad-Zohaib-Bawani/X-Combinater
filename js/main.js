@@ -844,5 +844,21 @@
     });
   }
 
+  function scrollToAnchorFromURL() {
+    const hash = window.location.hash;
+    if (hash) {
+      const targetId = hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+      let smoother = ScrollSmoother.get();
+      if (targetElement && smoother) {
+        const header = document.querySelector('.header-area');
+        const headerHeight = header ? header.offsetHeight : 0;
+        smoother.scrollTo(targetElement, true, `top top-=${headerHeight}`);
+      }
+    }
+  }
+
+  window.addEventListener('load', scrollToAnchorFromURL);
+
 })(jQuery);
 
