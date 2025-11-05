@@ -1,0 +1,12 @@
+.normal-logo {
+  width: 130px !important;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .normal-logo {
+    height: 100px !important;
+    width: auto !important;
+    object-fit: contain;
+  }
+}

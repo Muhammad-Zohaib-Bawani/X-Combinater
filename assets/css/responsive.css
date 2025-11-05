@@ -37,6 +37,10 @@
 }
 
 @media (max-width: 768px) {
+  .normal-logo{
+    width: 130px !important;
+    height: 100px;
+}
   .slider_section ol.carousel-indicators {
     justify-content: center;
   }
