@@ -1,6 +1,6 @@
 (function () {
   // https://dashboard.emailjs.com/admin/integration
-  emailjs.init("3dpw3MyafCpWF6vYj");
+  emailjs.init("UrrGx9fZvxHzoGU3B");
 })();
 
 window.onload = function () {
@@ -20,7 +20,7 @@ window.onload = function () {
       textTwo.innerHTML = "Sending...";
 
       // these IDs from the previous steps
-      emailjs.sendForm("service_zxe3f0t", "template_gil3jip", this).then(
+      emailjs.sendForm("service_t25vz3p", "template_w0q310t", this).then(
         function () {
           console.log("SUCCESS!");
           Swal.fire({
@@ -45,7 +45,7 @@ window.onload = function () {
             confirmButtonText: 'OK',
             confirmButtonColor: '#6421FF'
           }).then(() => {
-            // Re-enable button and restore text
+            //Re-enable button and restore text
             submitBtn.disabled = false;
             textOne.innerHTML = originalBtnText;
             textTwo.innerHTML = originalBtnText;
