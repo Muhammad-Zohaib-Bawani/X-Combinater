@@ -45,7 +45,7 @@ window.onload = function () {
             confirmButtonText: 'OK',
             confirmButtonColor: '#6421FF'
           }).then(() => {
-            //Re-enable button and restore text
+            // Re-enable button and restore text
             submitBtn.disabled = false;
             textOne.innerHTML = originalBtnText;
             textTwo.innerHTML = originalBtnText;
