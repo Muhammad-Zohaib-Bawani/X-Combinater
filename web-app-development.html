@@ -101,9 +101,7 @@
                 <span class="icon"
                   ><i class="fa-solid fa-location-dot"></i
                 ></span>
-                 <span class="text"
-                  >United States</span
-                >
+                <span class="text">United States</span>
               </div>
               <div class="contact-item">
                 <span class="icon"><i class="fa-solid fa-envelope"></i></span>
@@ -173,11 +171,11 @@
                 <div class="header-nav">
                   <nav class="main-menu">
                     <ul>
-                      <li><a href="#hero">Home</a></li>
+                      <li><a href="index.html">Home</a></li>
                       <li><a href="#about">About</a></li>
                       <li><a href="#services">Services</a></li>
                       <!-- <li><a href="#testimonials">Testimonials</a></li> -->
-                      <li><a href="#pricing">Pricing</a></li>
+                      <li><a href="/pricing.html">Pricing</a></li>
                       <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                   </nav>
@@ -199,6 +197,28 @@
         <!-- Header area end -->
 
         <main>
+          <!-- breadcrumb area start -->
+          <section class="breadcrumb-area">
+            <div class="breadcrumb-area-inner">
+              <div class="breadcrumb-bg">
+                <img src="assets/imgs/gallery/gallery-29.webp" alt="image" />
+              </div>
+              <div class="container rr-container-1410">
+                <div class="breadcrumb-content">
+                  <div class="title-wrapper">
+                    <h1 class="breadcrumb-title">Web & App Development</h1>
+                  </div>
+                  <div class="breadcrumb-wrapper">
+                    <ul class="rr-breadcrumb">
+                      <li><a href="#">Home</a></li>
+                      <li>Web & App Development</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- breadcrumb area end -->
           <!-- pricing-area start  -->
           <div
             class="pricing-area"
@@ -333,6 +353,33 @@
             </div>
           </div>
           <!-- pricing-area end  -->
+
+          <section class="project-3-area">
+            <div class="container rr-container-1410">
+              <div class="project-3-area-inner section-spacing">
+                <div class="project-header fade-anim">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle"
+                        ><span class="start-shape"></span
+                        ><span class="text">Our Portfolio</span
+                        ><span class="end-shape"></span
+                      ></span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title mb-3">
+                        Showcase Of Our Recognized Work
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-3-wrapper-box">
+                  <div class="project-3-wrapper"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- project-3 area end -->
         </main>
 
         <!-- footer area start  -->
@@ -425,6 +472,140 @@
         <!-- footer area end  -->
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const projectSection = document.querySelector(".project-3-wrapper");
+        const projectArea = document.querySelector(".project-3-area");
+
+        // Show temporary loading text
+        const loadingDiv = document.createElement("div");
+        loadingDiv.textContent = "Loading portfolio...";
+        loadingDiv.style.textAlign = "center";
+        loadingDiv.style.padding = "20px";
+        projectSection.appendChild(loadingDiv);
+
+        const query = `
+    query NewQuery {
+  post(id: "11", idType: DATABASE_ID) {
+    portfolio {
+      portfolio {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio2 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio3 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio4 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio5 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio6 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio7 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio8 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio9 {
+        node {
+          mediaItemUrl
+        }
+      }
+      portfolio10 {
+        node {
+          mediaItemUrl
+        }
+      }
+    }
+  }
+}
+  `;
+
+        fetch("https://xcombinater.com/wordpress/graphql", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // Remove loading text
+            loadingDiv.remove();
+
+            const portfolios = data?.data?.post?.portfolio;
+            if (!portfolios) {
+              projectArea.style.display = "none";
+              return;
+            }
+
+            // Collect all image URLs
+            const images = [
+              portfolios.portfolio?.node?.mediaItemUrl,
+              portfolios.portfolio2?.node?.mediaItemUrl,
+              portfolios.portfolio3?.node?.mediaItemUrl,
+              portfolios.portfolio4?.node?.mediaItemUrl,
+              portfolios.portfolio5?.node?.mediaItemUrl,
+              portfolios.portfolio6?.node?.mediaItemUrl,
+              portfolios.portfolio7?.node?.mediaItemUrl,
+              portfolios.portfolio8?.node?.mediaItemUrl,
+              portfolios.portfolio9?.node?.mediaItemUrl,
+              portfolios.portfolio10?.node?.mediaItemUrl,
+            ].filter(Boolean); // remove null/undefined
+
+            if (images.length === 0) {
+              projectArea.style.display = "none";
+              return;
+            }
+            console.log(images);
+            // Generate boxes dynamically
+            images.forEach((url) => {
+              const box = document.createElement("div");
+              box.className = "project-3-box fade-anim";
+
+              box.innerHTML = `
+          <div class="area-bg">
+            <img src="assets/imgs/shape/shape-23.webp" alt="shape" />
+          </div>
+          <div class="thumb">
+            <a href="project-details.html">
+              <img src="${url}" alt="Portfolio Image" style="width:100%;height:350px;object-fit:cover;border-radius:8px;" />
+            </a>
+          </div>
+          <div class="content-wrapper">
+            </div>
+          </div>
+        `;
+
+              projectSection.appendChild(box);
+            });
+          })
+          .catch((err) => {
+            console.error("Error fetching portfolio:", err);
+            loadingDiv.textContent = "Failed to load portfolio.";
+          });
+      });
+    </script>
 
     <!-- Dependencies JS Files -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
