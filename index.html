@@ -227,6 +227,7 @@
                         <img
                           src="assets/imgs/content/web_1.jpeg"
                           alt="image"
+                          id="banner_1"
                         />
                       </div>
                       <span class="hero-slide-tag">It Solution</span>
@@ -286,6 +287,7 @@
                         <img
                           src="assets/imgs/content/web_2.jpg"
                           alt="image"
+                          id="banner_2"
                         />
                       </div>
                       <span class="hero-slide-tag">It Solution</span>
@@ -362,14 +364,11 @@
                   data-direction="left"
                 >
                   <div class="about-thumb-1 img-reveal-anim">
-                    <img src="assets/imgs/content/web_2.jpg" alt="image" />
+                    <img src="assets/imgs/content/web_1.jpg" alt="image" />
                   </div>
                   <div class="about-thumb-content-wrapper">
                     <div class="about-thumb-2" data-speed="0.9">
-                      <img
-                      src="assets/imgs/content/post_2.jpeg"
-                        alt="image"
-                      />
+                      <img src="assets/imgs/content/post_2.jpeg" alt="image" />
                     </div>
                   </div>
                 </div>
@@ -493,7 +492,7 @@
                         <a href="web-development.html">
                           <img
                             class="main-img"
-                            src="assets/imgs/content/web_1.jpeg"
+                            src="assets/imgs/content/web_1.jpg"
                             alt="image"
                           />
                         </a>
@@ -525,7 +524,7 @@
                         <a href="app-development.html">
                           <img
                             class="main-img"
-                            src="assets/imgs/content/app_1.JPG"
+                            src="assets/imgs/content/app_3.jpeg"
                             alt="image"
                           />
                         </a>
@@ -1177,7 +1176,7 @@
                   data-direction="left"
                 >
                   <div class="progress-thumb-1 img-reveal-anim">
-                    <img src="assets/imgs/content/web_2.jpg" alt="image" />
+                    <img src="assets/imgs/content/web_1.jpg" alt="image" />
                   </div>
                   <div class="progress-thumb-2 img-reveal-anim">
                     <img src="assets/imgs/content/app_2.JPG" alt="image" />
@@ -1185,7 +1184,7 @@
                   <div class="progress-thumb-3">
                     <img
                       class="img-reveal-anim"
-                      src="assets/imgs/content/web_1.jpeg"
+                      src="assets/imgs/content/web_1.jpg"
                       alt="image"
                     />
                   </div>
@@ -1954,98 +1953,6 @@
                     </li>
                   </ul>
                 </div>
-                <!-- <div class="footer-widget-box">
-                  <h2 class="footer-widget-title">Our Services</h2>
-                  <ul class="footer-nav-list">
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-chevron-right"></i>Database
-                        Solution</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-chevron-right"></i>Data
-                        Protection</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-chevron-right"></i>App
-                        Development</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-chevron-right"></i>Machine
-                        Learning</a
-                      >
-                    </li>
-                    <li>
-                      <a href="#"
-                        ><i class="fa-solid fa-chevron-right"></i>Helpdesk
-                        Services</a
-                      >
-                    </li>
-                  </ul>
-                </div> -->
-                <!-- <div class="footer-widget-box">
-                  <h2 class="footer-widget-title">Latest Posts</h2>
-                  <div class="footer-blog-wrapper-box">
-                    <div class="footer-blog-wrapper">
-                      <article class="footer-blog">
-                        <div class="thumb">
-                          <a href="blog-details.html"
-                            ><img
-                              src="assets/imgs/blog/blog-9.webp"
-                              alt="blog image"
-                          /></a>
-                        </div>
-                        <div class="content">
-                          <div class="meta">
-                            <span class="date"
-                              ><i class="fa-regular fa-clock"></i>15th Dec,
-                              2025</span
-                            >
-                          </div>
-                          <h2 class="title">
-                            <a href="blog-details.html"
-                              >Why Your Business Needs</a
-                            >
-                          </h2>
-                          <a href="blog-details.html" class="blog-btn"
-                            >Read More <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </article>
-                      <article class="footer-blog">
-                        <div class="thumb">
-                          <a href="blog-details.html"
-                            ><img
-                              src="assets/imgs/blog/blog-10.webp"
-                              alt="blog image"
-                          /></a>
-                        </div>
-                        <div class="content">
-                          <div class="meta">
-                            <span class="date"
-                              ><i class="fa-regular fa-clock"></i>15th Dec,
-                              2025</span
-                            >
-                          </div>
-                          <h2 class="title">
-                            <a href="blog-details.html"
-                              >Small Business Essentials</a
-                            >
-                          </h2>
-                          <a href="blog-details.html" class="blog-btn"
-                            >Read More <i class="fa-solid fa-arrow-right"></i
-                          ></a>
-                        </div>
-                      </article>
-                    </div>
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
@@ -2069,7 +1976,204 @@
         <!-- footer area end  -->
       </div>
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const query = `query NewQuery {
+    page(id: 123, idType: DATABASE_ID) {
+      databaseId
+      title
+      banner {
+        bannerImage1 {
+          node {
+            mediaItemUrl
+          }
+        }
+        bannerImage2 {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+      ourExpertise {
+        image1 {
+          node {
+            mediaItemUrl
+          }
+        }
+        image2 {
+          node {
+            mediaItemUrl
+          }
+        }
+        image3 {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+      aboutOurCompany {
+        bgLargeImage {
+          node {
+            mediaItemUrl
+          }
+        }
+        fgSmallImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+      services {
+        appDevelopment {
+          node {
+            mediaItemUrl
+          }
+        }
+        socialMediaMarketing {
+          node {
+            mediaItemUrl
+          }
+        }
+        webDevelopment {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }`;
 
+        // Function to update images
+        function updateImages(page) {
+          if (!page) return;
+
+          // Update Banner Images (Hero Section)
+          const bannerImage1 = page.banner?.bannerImage1?.node?.mediaItemUrl;
+          const bannerImage2 = page.banner?.bannerImage2?.node?.mediaItemUrl;
+
+          // Update ALL instances of banner_1 (including Swiper clones)
+          if (bannerImage1) {
+            const heroBanner1All = document.querySelectorAll("#banner_1");
+            heroBanner1All.forEach((img) => {
+              img.src = bannerImage1;
+              img.setAttribute("src", bannerImage1);
+            });
+          }
+
+          // Update ALL instances of banner_2 (including Swiper clones)
+          if (bannerImage2) {
+            const heroBanner2All = document.querySelectorAll("#banner_2");
+            heroBanner2All.forEach((img) => {
+              img.src = bannerImage2;
+              img.setAttribute("src", bannerImage2);
+            });
+          }
+
+          // Update About Our Company Images
+          const aboutImage1 =
+            page.aboutOurCompany?.bgLargeImage?.node?.mediaItemUrl;
+          const aboutImage2 =
+            page.aboutOurCompany?.fgSmallImage?.node?.mediaItemUrl;
+
+          if (aboutImage1) {
+            const aboutThumb1 = document.querySelector(".about-thumb-1 img");
+            if (aboutThumb1) aboutThumb1.src = aboutImage1;
+          }
+
+          if (aboutImage2) {
+            const aboutThumb2 = document.querySelector(".about-thumb-2 img");
+            if (aboutThumb2) aboutThumb2.src = aboutImage2;
+          }
+
+          // Update Services Images
+          const webDevImage = page.services?.webDevelopment?.node?.mediaItemUrl;
+          const appDevImage = page.services?.appDevelopment?.node?.mediaItemUrl;
+          const socialMediaImage =
+            page.services?.socialMediaMarketing?.node?.mediaItemUrl;
+
+          if (webDevImage) {
+            const webDevImg = document.querySelector(
+              ".service-box:nth-child(1) .main-img"
+            );
+            if (webDevImg) webDevImg.src = webDevImage;
+          }
+
+          if (appDevImage) {
+            const appDevImg = document.querySelector(
+              ".service-box:nth-child(2) .main-img"
+            );
+            if (appDevImg) appDevImg.src = appDevImage;
+          }
+
+          if (socialMediaImage) {
+            const socialMediaImg = document.querySelector(
+              ".service-box:nth-child(3) .main-img"
+            );
+            if (socialMediaImg) socialMediaImg.src = socialMediaImage;
+          }
+
+          // Update Our Expertise (Progress Section) Images
+          const expertiseImage1 = page.ourExpertise?.image1?.node?.mediaItemUrl;
+          const expertiseImage2 = page.ourExpertise?.image2?.node?.mediaItemUrl;
+          const expertiseImage3 = page.ourExpertise?.image3?.node?.mediaItemUrl;
+
+          if (expertiseImage1) {
+            const progressThumb1 = document.querySelector(
+              ".progress-thumb-1 img"
+            );
+            if (progressThumb1) progressThumb1.src = expertiseImage1;
+          }
+
+          if (expertiseImage2) {
+            const progressThumb2 = document.querySelector(
+              ".progress-thumb-2 img"
+            );
+            if (progressThumb2) progressThumb2.src = expertiseImage2;
+          }
+
+          if (expertiseImage3) {
+            const progressThumb3 = document.querySelector(
+              ".progress-thumb-3 img"
+            );
+            if (progressThumb3) progressThumb3.src = expertiseImage3;
+          }
+
+          console.log("✅ Images successfully updated from GraphQL");
+        }
+
+        // Fetch GraphQL data
+        fetch("https://xcombinater.com/wordpress/graphql", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ query }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const page = data?.data?.page;
+
+            // Update images immediately
+            setTimeout(() => updateImages(page), 500);
+
+            // Update again after Swiper fully initializes
+            setTimeout(() => updateImages(page), 1500);
+
+            // Listen for Swiper slide change and update again
+            setTimeout(() => {
+              const swiperInstance =
+                document.querySelector(".slider-active")?.swiper;
+              if (swiperInstance) {
+                swiperInstance.on("slideChange", function () {
+                  updateImages(page);
+                });
+              }
+            }, 1000);
+          })
+          .catch((err) => {
+            console.error("❌ Error fetching images from GraphQL:", err);
+            console.log("Using default images from assets folder");
+          });
+      });
+    </script>
     <!-- Dependencies JS Files -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>

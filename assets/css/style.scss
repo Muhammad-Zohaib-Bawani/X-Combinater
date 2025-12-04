@@ -4,18 +4,17 @@ $primary1: #1c1c1c;
 $primary2: #ffd700;
 
 // import fonts
-
+@import url("https://fonts.googleapis.com/css2?family=Squad+One&display=swap");
 // fontAwesome
 @import url("font-awesome.min.css");
 
 @mixin main-font {
-  font-family: "Poppins", sans-serif;
+  font-family: "Squad One", cursive;
 }
 
 @mixin second-font {
-  font-family: "Poppins", sans-serif;
+  font-family: "Squad One", cursive;
 }
-
 // btn style
 @mixin hero_btn($col1, $col2, $pad1, $pad2) {
   display: inline-block;
