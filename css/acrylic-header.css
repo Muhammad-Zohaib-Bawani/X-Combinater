@@ -1,0 +1,101 @@
+/* Acrylic / frosted-glass header
+   Targets the fixed site header and menu frame header.
+   Loads after main stylesheet to override previous header backgrounds.
+*/
+.mil-frame .mil-frame-top,
+.mil-menu-frame .mil-frame-top {
+  /* stronger acrylic + rounded corners */
+  position: relative; /* for noise overlay */
+  /* translucent gradient + subtle tint */
+  background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.03) 100%);
+  /* solid translucent fallback so header never becomes fully transparent */
+  background-color: rgba(255,255,255,0.06);
+  background-blend-mode: overlay;
+  -webkit-backdrop-filter: blur(18px) saturate(140%) contrast(1.02);
+  backdrop-filter: blur(18px) saturate(140%) contrast(1.02);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  /* make header wider by reducing horizontal margins */
+  margin: 8px 12px; /* smaller side gutters so header spans more of the viewport */
+  padding: 8px 20px; /* give inner content breathing room without moving logo */
+  box-shadow: 0 12px 40px rgba(10,10,10,0.12);
+  /* ensure header sits above page content so acrylic/backdrop-filter is visible */
+  z-index: 1002;
+  transition: background 280ms ease, border-color 280ms ease, box-shadow 280ms ease, transform 200ms ease;
+  overflow: hidden; /* clip noise overlay */
+  pointer-events: all; /* keep header interactive */
+}
+
+/* Slightly darker acrylic when user prefers dark scheme */
+@media (prefers-color-scheme: dark) {
+  .mil-frame .mil-frame-top,
+  .mil-menu-frame .mil-frame-top {
+    background: linear-gradient(180deg, rgba(6,6,6,0.56) 0%, rgba(6,6,6,0.28) 100%);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 12px 44px rgba(0,0,0,0.28);
+  }
+}
+
+/* Increase contrast on scroll (optional hook if you want to toggle a "scrolled" class)
+   Add/remove `.mil-frame.scrolled` from JS to increase opacity when user scrolls.
+*/
+.mil-frame.scrolled .mil-frame-top {
+  background: linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%);
+  border-color: rgba(255,255,255,0.22);
+  box-shadow: 0 18px 60px rgba(8,8,8,0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  /* keep acrylic on smaller screens as well */
+  .mil-frame .mil-frame-top,
+  .mil-menu-frame .mil-frame-top {
+    -webkit-backdrop-filter: blur(14px) saturate(125%);
+    backdrop-filter: blur(14px) saturate(125%);
+    margin: 6px 8px;
+    border-radius: 14px;
+    padding: 6px 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+    background-color: rgba(255,255,255,0.05);
+  }
+}
+
+/* subtle noise overlay for authentic acrylic look */
+.mil-frame .mil-frame-top::before,
+.mil-menu-frame .mil-frame-top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 6px 6px;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* keep interior elements aligned when margin added above */
+.mil-frame .mil-frame-top .mil-logo,
+.mil-menu-frame .mil-frame-top .mil-logo {
+  /* Use Blanka font for header logo */
+  font-family: 'Blanka', sans-serif !important;
+  /* Always use black for the header logo to ensure readability on all backgrounds */
+  color: rgb(0, 0, 0) !important;
+}
+
+/* When viewport is over a .mil-dark-bg section, switch header logo/menu to light for contrast */
+/* When page is over a dark section, switch both the main frame and the menu-frame
+   header to light (covers both .mil-frame and .mil-menu-frame clones). */
+body.mil-on-dark .mil-frame .mil-frame-top .mil-logo,
+body.mil-on-dark .mil-menu-frame .mil-frame-top .mil-logo {
+  color: rgb(255, 255, 255) !important;
+}
+body.mil-on-dark .mil-frame .mil-frame-top .mil-menu-btn span,
+body.mil-on-dark .mil-frame .mil-frame-top .mil-menu-btn span:after,
+body.mil-on-dark .mil-frame .mil-frame-top .mil-menu-btn span:before,
+body.mil-on-dark .mil-menu-frame .mil-frame-top .mil-menu-btn span,
+body.mil-on-dark .mil-menu-frame .mil-frame-top .mil-menu-btn span:after,
+body.mil-on-dark .mil-menu-frame .mil-frame-top .mil-menu-btn span:before {
+  background: rgb(255, 255, 255);
+}
+
+/* If you prefer sharper corners: reduce radius to 8px */

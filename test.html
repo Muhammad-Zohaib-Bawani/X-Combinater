@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial; padding: 20px;">
+
+<h2>SVG Background Remover</h2>
+
+<input type="file" id="upload" accept=".svg"><br><br>
+
+<h3>Original SVG:</h3>
+<div id="original"></div>
+
+<h3>Cleaned SVG (Background Removed):</h3>
+<div id="cleaned"></div>
+
+<button id="download" style="display:none;">Download Cleaned SVG</button>
+
+<script>
+// Remove background from SVG
+function removeSvgBackground(svgString) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(svgString, "image/svg+xml");
+    const svg = xml.documentElement;
+
+    // Remove background <rect> elements
+    svg.querySelectorAll("rect").forEach(rect => {
+        const fill = rect.getAttribute("fill");
+        if (fill && fill !== "transparent" && fill !== "none") {
+            rect.remove();
+        }
+    });
+
+    // Remove white fills (common BG)
+    svg.querySelectorAll("*").forEach(el => {
+        const fill = el.getAttribute("fill");
+        if (fill === "#fff" || fill === "#ffffff" || fill === "white") {
+            el.setAttribute("fill", "none");
+        }
+    });
+
+    return new XMLSerializer().serializeToString(svg);
+}
+
+document.getElementById("upload").addEventListener("change", function () {
+    const file = this.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const originalSvg = e.target.result;
+
+        // Show original SVG
+        document.getElementById("original").innerHTML = originalSvg;
+
+        // Clean SVG
+        const cleanedSvg = removeSvgBackground(originalSvg);
+        document.getElementById("cleaned").innerHTML = cleanedSvg;
+
+        // Enable download
+        const downloadBtn = document.getElementById("download");
+        downloadBtn.style.display = "block";
+        downloadBtn.onclick = function () {
+            const blob = new Blob([cleanedSvg], { type: "image/svg+xml" });
+            const url = URL.createObjectURL(blob);
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "cleaned.svg";
+            a.click();
+
+            URL.revokeObjectURL(url);
+        };
+    };
+
+    reader.readAsText(file);
+});
+</script>
+
+</body>
+</html>
